@@ -21,8 +21,8 @@ const BlogSection = () => {
             <BlogContainer id='blog'>
                 <BlogWrapper>
                     {
-                        data.map(({ author, heading, image, text }) => (
-                            <BlogPreview>
+                        data.map(({ author, heading, image, text }, i) => (
+                            <BlogPreview key={i}>
                                 <AuthorSpace>
                                     <AuthorIcon />
                                     <Author> {author} </Author>
@@ -36,7 +36,7 @@ const BlogSection = () => {
                                     </PreviewText>
                                 </TextWrapper>
                                 <ImgContainer>
-                                    <Image src={'/assets/images/' + image} width={400} height={300} />
+                                    <Image src={'/assets/images/' + image} alt="" width={400} height={300} />
                                 </ImgContainer>
                             </BlogPreview>
                         ))
