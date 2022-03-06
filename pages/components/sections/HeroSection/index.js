@@ -21,7 +21,7 @@ const HeroSection = () => {
         </HeroP>
         <HeroBtnWrapper>
           <Button primary to='about' smooth={true} duration={500} spy={true} exact="true" offset={-80} onMouseEnter={onHover} onMouseLeave={onHover}>
-            Learn More <ArrowRight hover={hover}/>
+            Mëso më shumë <ArrowRight hover={hover}/>
           </Button>
         </HeroBtnWrapper>
       </HeroContent>

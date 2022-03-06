@@ -1,6 +1,6 @@
 import React from 'react';
-import data from './blog.data';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import {
     BlogContainer,
@@ -12,16 +12,24 @@ import {
     Author,
     PreviewText,
     TextWrapper,
-    ImgContainer
+    ImgContainer,
+    ArrowRight,
 } from './BlogElements';
-const BlogSection = () => {
+import { ButtonHref } from '../../ButtonElement'
+import { useState } from 'react';
 
+const BlogSection = (props) => {
+    const [hover, setHover] = useState(false)
+
+    const onHover = () => {
+        setHover(!hover);
+    }
     return (
         <>
             <BlogContainer id='blog'>
                 <BlogWrapper>
                     {
-                        data.map(({ author, heading, image, text }, i) => (
+                        props.posts.map(({ author, title, image, body }, i) => (
                             <BlogPreview key={i}>
                                 <AuthorSpace>
                                     <AuthorIcon />
@@ -29,10 +37,10 @@ const BlogSection = () => {
                                 </AuthorSpace>
                                 <TextWrapper>
                                     <Heading>
-                                        {heading}
+                                        {title}
                                     </Heading>
                                     <PreviewText>
-                                        {text.split(/\s+/).slice(0, 20).join(' ') + '...'}
+                                        {body.split(/\s+/).slice(0, 20).join(' ') + '...'}
                                     </PreviewText>
                                 </TextWrapper>
                                 <ImgContainer>
@@ -42,6 +50,12 @@ const BlogSection = () => {
                         ))
                     }
                 </BlogWrapper>
+                <a href='/blog' style={{textDecoration: 'none'}}>
+                        <ButtonHref primary onMouseEnter={onHover} onMouseLeave={onHover}>
+                            Më Shumë Blog
+                            <ArrowRight hover={hover} />
+                        </ButtonHref>
+                    </a>
             </BlogContainer>
         </>
     )

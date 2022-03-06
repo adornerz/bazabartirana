@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { MdPersonOutline } from 'react-icons/md';
+import { MdPersonOutline, MdKeyboardArrowRight } from 'react-icons/md';
 
 export const BlogContainer = styled.div`
     background: #0f0e17;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 100px 30px;
@@ -70,4 +71,10 @@ export const TextWrapper = styled.div`
 
 export const ImgContainer = styled.div`
     padding: 5px;
+`
+
+export const ArrowRight = styled(MdKeyboardArrowRight)`
+    margin-left: ${props => props.hover ? '10px' : '6px'};
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
 `
