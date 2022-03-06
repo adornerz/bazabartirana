@@ -9,7 +9,7 @@ const Navbar = (props) => {
         <>
             <Nav>
                 <NavbarContainer>
-                    <Link href='/'>
+                    <Link href='/' passHref>
                         <NavLogo>
                             Baza
                         </NavLogo>

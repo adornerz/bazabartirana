@@ -4,6 +4,11 @@ import { PrismaClient } from "@prisma/client";
 const Blog = (props) => {
     return (
         <div>
+            <br />
+            <br />
+            !! THIS PAGE IS FOR TESTING FOR NOW // NOT FINISHED!!
+            <br />
+            <br />
             Title: {props.title}
             <br />
             Body: {props.body}

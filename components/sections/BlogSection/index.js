@@ -50,12 +50,12 @@ const BlogSection = (props) => {
                         ))
                     }
                 </BlogWrapper>
-                <a href='/blog' style={{textDecoration: 'none'}}>
+                <Link href='/blog' passHref>
                         <ButtonHref primary onMouseEnter={onHover} onMouseLeave={onHover}>
                             Më Shumë Blog
                             <ArrowRight hover={hover} />
                         </ButtonHref>
-                    </a>
+                    </Link>
             </BlogContainer>
         </>
     )
